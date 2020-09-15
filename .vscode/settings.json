@@ -1,0 +1,16 @@
+{
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "update.mode": "start",
+  "extensions.autoUpdate": false,
+  "editor.tabSize": 2,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.enableExperiments": false,
+  "files.exclude": {
+      "**/.vscode/**": true,
+      "**/node_modules": true
+  },
+  "files.watcherExclude": {
+      "**/node_modules/*/**": true
+  }
+}
