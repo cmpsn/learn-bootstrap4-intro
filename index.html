@@ -102,6 +102,92 @@
   </div>
 
 
+  <!--Create another MODAL - must be at the top of the page, after NAV tag-->
+  <div id="reserveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <!--Create modal content-->
+      <div class="modal-content">
+        
+        <!--MODAL Header-->
+        <div class="modal-header">
+          <h3 class="modal-title">Reserve a Table</h3>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!--MODAL body with FORM inside-->
+        <div class="modal-body">
+          <form>
+            <!-- Create a FORM field with radio buttons-->
+            <div class="form-group row">
+              <label for="numguests" class="col-12 col-sm-4 col-form-label">Number of guests</label>
+              <div class="col-12 col-sm-auto my-auto">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="numguests1" id="numguests1" value="option1">
+                  <label class="form-check-label" for="numguests1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="numguests2" id="numguests2" value="option2">
+                  <label class="form-check-label" for="numguests2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="numguests3" id="numguests3" value="option3">
+                  <label class="form-check-label" for="numguests3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="numguests4" id="numguests4" value="option4">
+                  <label class="form-check-label" for="numguests4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="numguests5" id="numguests5" value="option5">
+                  <label class="form-check-label" for="numguests5">5</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="numguests6" id="numguests6" value="option6">
+                  <label class="form-check-label" for="numguests6">6</label>
+                </div>
+              </div>
+            </div>
+            <!-- Create a FORM field for 2 Radio Buttons-->
+            <div class="form-group row">
+              <label for="smoke" class="col-12 col-sm-4 col-form-label">Section</label>
+              <div class="btn-group btn-group-toggle col-12 col-sm-auto" data-toggle="buttons">
+                <label class="btn btn-success active">
+                  <input type="radio" name="options" id="nonsmoker" autocomplete="off" checked>Non-smoking
+                </label>
+                <label class="btn btn-success">
+                  <input type="radio" name="options" id="smoker" autocomplete="off">Smoking
+                </label>
+              </div>
+            </div>
+            <!-- Create a FORM field for Date and Time-->
+            <div class="form-group row">
+              <label for="date" class="col-12 col-sm-4 col-form-label">Date and Time</label>
+              <div class="col-12 col-sm-4">
+                <input type="date" class="form-control" id="date" name="date" placeholder="Date">
+              </div>
+              <div class="col-12 col-sm-auto">
+                <input type="time" class="form-control" id="time" name="time" placeholder="Time">
+              </div>
+            </div>
+            <!-- Create a CANCEL and a SUBMIT button for MODAL -->
+            <div class="form-group row">
+              <div class="offset-sm-4 col-sm-8">
+                <button type="button" class="btn btn-secondary btn-sm ml-auto" 
+                  data-dismiss="modal">
+                  Cancel
+                </button>
+                <button type="submit" class="btn btn-primary btn-sm ml-auto">
+                  Reserve
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!--Create a Jumbotron in page HEADER-->
   <header class="jumbotron">
     <div class="container">
@@ -114,13 +200,20 @@
           <img src="img/logo.png" class="img-fluid">
         </div>
         <div class="col-12 col-sm-3 align-self-center">
+
           <!-- Create a link with BUTTON role and aspect and href to a section of the same page-->
           <!-- Add a TOOLTIP to this button when hover on it-->
-          <a role="button" class="btn btn-warning btn-sm btn-block" 
+
+          <!-- <a role="button" class="btn btn-warning btn-sm btn-block" 
           href="#reserveform"
           data-toggle="tooltip" data-html="true" 
           title="Or Call us at <br><strong>+852 1234567</strong>"
-          data-placement="bottom">Reserve Table</a>
+          data-placement="bottom">Reserve Table</a> -->
+
+          <!-- Create a link with BUTTON role that toggles #reserveModal MODAL-->
+          <a role="button" class="btn btn-warning btn-sm btn-block"
+            data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+
         </div>
       </div>
     </div>
@@ -352,12 +445,13 @@
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  
   <!-- Add script for the TOOLTIP components in this page-->
-  <script>
+  <!-- <script>
     $(document).ready(function() {
       $('[data-toggle="tooltip"]').tooltip();
     });
-  </script>
+  </script> -->
 
 </body>
 
