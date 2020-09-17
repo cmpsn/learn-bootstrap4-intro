@@ -18,6 +18,7 @@
 </head>
 
 <body>
+  <!--Create a NAVBAR - Navigation Bar-->
   <nav class="navbar navbar-dark navbar-expand-md fixed-top">
     <div class="container">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
@@ -33,10 +34,75 @@
           <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
           <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
         </ul>
+        <!--Add the MODAL link to trigger the MODAL below-->
+        <span class="navbar-text">
+          <a data-toggle="modal" data-target="#loginModal">
+            <span class="fa fa-sign-in"></span> Login
+          </a>
+        </span>
       </div>
     </div>
   </nav>
   
+  <!--Create a MODAL - must be at the top of the page, after NAV tag-->
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <!--Create modal content-->
+      <div class="modal-content">
+
+        <!--Modal Header-->
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+
+        <!--Modal Body with a form inside-->
+        <div class="modal-body">
+          <form>
+
+            <div class="form-row">
+
+              <div class="form-group col-sm-4">
+                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control form-control-sm mr-1"
+                  id="exampleInputEmail3" placeholder="Enter email">
+              </div>
+
+              <div class="form-group col-sm-4">
+                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control form-control-sm mr-1" 
+                  id="exampleInputPassword3" placeholder="Password">
+              </div>
+
+              <div class="col-sm-auto">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label"> Remember me</label>
+                </div>
+              </div>
+            
+            </div>
+
+            <div class="form-row">
+              <button type="button" class="btn btn-secondary btn-sm ml-auto" 
+                data-dismiss="modal">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary btn-sm ml-1">
+                Sign in
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Create a Jumbotron in page HEADER-->
   <header class="jumbotron">
     <div class="container">
       <div class="row row-header">
@@ -49,22 +115,29 @@
         </div>
         <div class="col-12 col-sm-3 align-self-center">
           <!-- Create a link with BUTTON role and aspect and href to a section of the same page-->
-          <a href="#reserveform" class="btn btn-warning btn-sm btn-block" role="button">Reserve Table</a>
+          <!-- Add a TOOLTIP to this button when hover on it-->
+          <a role="button" class="btn btn-warning btn-sm btn-block" 
+          href="#reserveform"
+          data-toggle="tooltip" data-html="true" 
+          title="Or Call us at <br><strong>+852 1234567</strong>"
+          data-placement="bottom">Reserve Table</a>
         </div>
       </div>
     </div>
   </header>
 
+  <!--Create ROWS and COLUMNS for Content-->
   <div class="container">
 
     <div class="row row-content align-items-center">
       <div class="col-12 col-sm-4 order-sm-last col-md-3">
         <h3>Our Lipsmacking Culinary Creations</h3>
       </div>
+      <!-- Add MEDIA / IMAGE content -->
       <div class="col col-sm order-sm-first col-md">
         <div class="media">
           <img class="d-flex mr-3 img-thumbnail align-self-center"
-          src="img/uthappizza.png" alt="uthappizza"
+            src="img/uthappizza.png" alt="uthappizza"
           >
           <div class="media-body">
             <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span><span class="badge badge-pill badge-secondary ml-1">$4.99</span></h2>
@@ -85,8 +158,7 @@
             <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
           </div>
           <img class="d-flex ml-2 img-thumbnail align-self-center"
-          src="img/buffet.png" alt="buffet"
-          >
+            src="img/buffet.png" alt="buffet">
         </div>
       </div>
     </div>
@@ -98,8 +170,7 @@
       <div class="col col-sm order-sm-first col-md">
         <div class="media">
           <img class="d-flex mr-3 img-thumbnail align-self-center" 
-          src="img/alberto.png" alt="alberto"
-          >
+            src="img/alberto.png" alt="alberto">
           <div class="media-body">
             <h2>Alberto Somayya</h2>
             <h4>Executive Chef</h4>
@@ -219,6 +290,12 @@
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Add script for the TOOLTIP components in this page-->
+  <script>
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
 
 </body>
 
