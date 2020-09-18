@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  $('#carousel-pause').click(function() {
+$(function() {
+  $('#carousel-pause').on('click', function() {
     if ($('#carouselButton').children('span').hasClass('fa-pause')) {
       $('#mycarousel').carousel('pause');
       $('#carouselButton').children('span').removeClass('fa-pause');
