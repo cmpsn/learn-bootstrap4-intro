@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt);
 
-  // declare sass
+  // Declare Sass implementation with node-sass plugin
   const sass = require("node-sass");
 
   // Define the configuration for all the tasks
